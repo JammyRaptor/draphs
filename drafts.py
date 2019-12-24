@@ -1943,47 +1943,47 @@ class Buttons:
         self.buttons.pack(pady=10 * board.size)
 
         self.on = False
-        self.guides = Button(self.buttons, text="Guidelines are off", command=self.toggle,
-                             activebackground="light blue", width=int(13 + board.size),
-                             font=("Verdana", int(15 * board.size)))
+        self.guides = Button(self.buttons, text="Guidelines: off", command=self.toggle,
+                             activebackground="light blue", width=int(11 + board.size),
+                             font=("Verdana", int(13 * board.size)))
         self.guides.grid(column="0", row="0")
         Label(self.buttons, text="", width=int(2 * board.size), bg="light blue").grid(column="1", row="0")
-        self.reset = Button(self.buttons, text="Restart", width=int(13 + board.size), command=board.repbutton,
-                            font=("Verdana", int(15 * board.size)))
+        self.reset = Button(self.buttons, text="Restart", width=int(9 + board.size), command=board.repbutton,
+                            font=("Verdana", int(13 * board.size)))
         self.reset.grid(column="2", row="0")
         Label(self.buttons, text="", width=int(2 * board.size), bg="light blue").grid(column="3", row="0")
         self.Aion = True
-        self.AiButton = Button(self.buttons, text="Numbers Off", command=self.toggleAi,
-                               activebackground="light blue", width=int(13 + board.size),
-                               font=("Verdana", int(15 * board.size)))
+        self.AiButton = Button(self.buttons, text="Numbers: Off", command=self.toggleAi,
+                               activebackground="light blue", width=int(10 + board.size),
+                               font=("Verdana", int(13 * board.size)))
         self.AiButton.grid(column="4", row="0")
-        self.MenuButton = Button(self.buttons, text="Menu", width=int(13 + board.size), command=menu.openmenu,
-                                 font=("Verdana", int(15 * board.size)))
+        self.MenuButton = Button(self.buttons, text="Menu", width=int(6 + board.size), command=menu.openmenu,
+                                 font=("Verdana", int(13 * board.size)))
         Label(self.buttons, text="", bg="light blue").grid(column="2", row="1")
         self.MenuButton.grid(column="2", row="2")
 
     def toggle(self):
 
         if self.on is False:
-            self.guides.configure(text="Guidelines are on", relief=SUNKEN, font=("Verdana", int(15 * board.size)))
+            self.guides.configure(text="Guidelines: on", relief=SUNKEN, font=("Verdana", int(13 * board.size)))
 
             self.on = True
             board.guidelines(False)
         else:
-            self.guides.configure(text="Guidelines are off", relief=RAISED, font=("Verdana", int(15 * board.size)))
+            self.guides.configure(text="Guidelines: off", relief=RAISED, font=("Verdana", int(13 * board.size)))
             self.on = False
             board.guidelines(False)
         # Ai.aiturn()
 
     def toggleAi(self):
         if self.Aion is False:
-            self.AiButton.configure(text="Numbers off", relief=SUNKEN, font=("Verdana", int(15 * board.size)))
+            self.AiButton.configure(text="Numbers: off", relief=SUNKEN, font=("Verdana", int(15 * board.size)))
 
             self.Aion = True
             board.showounternums(False)
 
         else:
-            self.AiButton.configure(text="Numbers on", relief=RAISED, font=("Verdana", int(15 * board.size)))
+            self.AiButton.configure(text="Numbers: on", relief=RAISED, font=("Verdana", int(15 * board.size)))
             self.Aion = False
             board.showounternums(True)
 
@@ -2002,7 +2002,7 @@ menu = MenuScreen()
 
 root.config(bg="light blue")
 root.title("Drafts")
-#root.iconbitmap(r'checker-board.ico')
+root.iconbitmap(r'checker-board.ico')
 Ai = Ai()
 
 mainloop()
